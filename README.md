@@ -1,4 +1,7 @@
 # Getting Started with Create React App
+![image description](relative/path/in/repository/to/image.svg)
+OR
+<img src="relative/path/in/repository/to/image.svg" width="128"/>
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
