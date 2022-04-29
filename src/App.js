@@ -4,9 +4,9 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import Header from "./common/header/Header"
 import Pages from "./pages/Pages"
 import Footer from "./common/footer/Footer"
-import Sdata from "./components/shops/Sdata"
 import { Conexion } from './data/conexion';
 import {getproductos} from './components/Data'
+import {AddToCart} from './business/cart'
 
 function App() {
   const [productItems, setProductItems] = useState([])
@@ -15,30 +15,13 @@ function App() {
 
   const [CartItem, setCartItem] = useState([])
 
-  const addToCart = (product) => {
-    const productExit = CartItem.find((item) => item.id === product.id)
-    if (productExit) {
-      setCartItem(CartItem.map((item) => (item.id === product.id ? { ...productExit, qty: productExit.qty + 1 } : item)))
-    } else {
-      setCartItem([...CartItem, { ...product, qty: 1 }])
-    }
-  }
-  const decreaseQty = (product) => {
-    const productExit = CartItem.find((item) => item.id === product.id)
-    if (productExit.qty === 1) {
-      setCartItem(CartItem.filter((item) => item.id !== product.id))
-    } else {
-      setCartItem(CartItem.map((item) => (item.id === product.id ? { ...productExit, qty: productExit.qty - 1 } : item)))
-    }
-  }
-
   return (
     <>
       <Router>
         <Header CartItem={CartItem} />
         <Switch>
           <Route path='/' exact>
-            <Pages productItems={productItems} addToCart={addToCart}/>
+            <Pages productItems={productItems} addToCart={AddToCart}/>
           </Route>
         </Switch> 
         <Conexion />
