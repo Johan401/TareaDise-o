@@ -1,2 +1,2 @@
 # TareaArqui
-<img src="https://user-images.githubusercontent.com/61443192/165652042-95278b62-77d3-4cab-8902-b1398ebfa1cf.jpg" alt="Header" title="TareaArqui">
+<img src="https://user-images.githubusercontent.com/61443192/165870820-badc5a93-dca9-412c-9d81-2415b5076e94.png" alt="Header" title="TareaArqui">
